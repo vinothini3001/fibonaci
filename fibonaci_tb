@@ -1,0 +1,35 @@
+module fibonaci_tb;
+
+	// Inputs
+	reg clk;
+	reg rst;
+
+	// Outputs
+	wire [31:0] fib_out;
+	// Instantiate the Unit Under Test (UUT)
+	fibonaci uut (
+		.clk(clk), 
+		.rst(rst), 
+		.fib_out(fib_out)
+	);
+
+	initial begin
+		// Initialize Inputs
+		rst = 1;
+		#100;
+		rst = 0;
+		#100;
+   
+end
+initial 
+begin
+clk=1'b0;
+forever #10 clk=~clk;
+end 
+initial begin
+#500  $finish;
+end
+
+      
+endmodule
+
